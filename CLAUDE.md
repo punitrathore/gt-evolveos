@@ -41,7 +41,7 @@ bd close <id>         # Complete work
    git pull --rebase
    bd dolt push
    git push
-   git status  # MUST show the intended pushed state
+   git status  # MUST show "up to date with origin"
    ```
 5. **Clean up** - Clear stashes, prune remote branches
 6. **Verify** - All changes committed AND pushed
@@ -64,4 +64,5 @@ When PR-first delivery is enabled:
 - The shared `/done` guidance follows the same split
 
 This is a workflow behavior, not just a repo-local reminder.
+
 <!-- END BEADS INTEGRATION -->

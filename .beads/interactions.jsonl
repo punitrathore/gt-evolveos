@@ -55,3 +55,4 @@
 {"id":"int-aaf40077","kind":"field_change","created_at":"2026-04-14T19:45:05.400014Z","actor":"daemon","issue_id":"hq-wisp-mn2t","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-aee6683a","kind":"field_change","created_at":"2026-04-14T19:45:05.799907Z","actor":"daemon","issue_id":"hq-wisp-0e7b","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-3f517138","kind":"field_change","created_at":"2026-04-14T19:50:04.596599Z","actor":"daemon","issue_id":"hq-wisp-pmar","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-e64dccb9","kind":"field_change","created_at":"2026-04-14T19:50:05.098652Z","actor":"daemon","issue_id":"hq-wisp-9b0e","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
