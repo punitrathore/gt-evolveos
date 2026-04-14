@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "rigs": {
+    "ManaSutra": {
+      "git_url": "https://github.com/punitrathore/ManaSutra.git",
+      "added_at": "2026-04-14T11:29:43.482448-07:00",
+      "beads": {
+        "repo": "",
+        "prefix": "ms"
+      }
+    }
+  }
+}
