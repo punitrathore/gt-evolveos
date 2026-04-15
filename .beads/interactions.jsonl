@@ -193,3 +193,10 @@
 {"id":"int-0be556d2","kind":"field_change","created_at":"2026-04-15T00:24:38.514638Z","actor":"daemon","issue_id":"hq-wisp-puf7b","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-16b4031e","kind":"field_change","created_at":"2026-04-15T00:24:38.887699Z","actor":"daemon","issue_id":"hq-wisp-iz024","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-ddc23d55","kind":"field_change","created_at":"2026-04-15T00:32:10.437645Z","actor":"daemon","issue_id":"hq-wisp-ehl04","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-31e30161","kind":"field_change","created_at":"2026-04-15T00:32:11.051373Z","actor":"daemon","issue_id":"hq-wisp-bxcko","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-2392b8c1","kind":"field_change","created_at":"2026-04-15T00:40:12.00052Z","actor":"daemon","issue_id":"hq-wisp-kg7lj","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-c5147459","kind":"field_change","created_at":"2026-04-15T00:48:46.849212Z","actor":"daemon","issue_id":"hq-wisp-g2f0z","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-9cbff8f1","kind":"field_change","created_at":"2026-04-15T00:48:47.643345Z","actor":"daemon","issue_id":"hq-wisp-4nwdr","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
+{"id":"int-8f803dee","kind":"field_change","created_at":"2026-04-15T00:48:47.643484Z","actor":"daemon","issue_id":"hq-wisp-4nwdr","extra":{"field":"assignee","new_value":"deacon/dogs/bravo","old_value":""}}
+{"id":"int-49ad20ea","kind":"field_change","created_at":"2026-04-15T00:49:04.851696Z","actor":"daemon","issue_id":"hq-wisp-wflrm","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-b55d61bd","kind":"field_change","created_at":"2026-04-15T00:49:05.413592Z","actor":"daemon","issue_id":"hq-wisp-wxy7l","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
