@@ -4,7 +4,12 @@
       "bead_id": "ms-ahi",
       "count": 1,
       "last_respawn": "2026-04-14T19:27:26.003558Z"
+    },
+    "ms-mu4": {
+      "bead_id": "ms-mu4",
+      "count": 1,
+      "last_respawn": "2026-04-15T00:00:35.409873Z"
     }
   },
-  "last_updated": "2026-04-14T19:27:26.00375Z"
+  "last_updated": "2026-04-15T00:00:35.409875Z"
 }
