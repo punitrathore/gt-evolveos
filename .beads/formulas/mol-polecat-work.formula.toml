@@ -11,10 +11,10 @@ You are a self-cleaning worker. You:
 1. Receive work via your hook (formula checklist + issue)
 2. Work through formula steps in order (shown inline at prime time)
 3. Complete and self-clean via `gt done` (submit + nuke yourself)
-4. You are GONE - Refinery merges from MQ
+4. You are GONE - Refinery merges from MQ, or a human merges your PR
 
-**Self-cleaning:** When you run `gt done`, you push your work, submit to MQ,
-nuke your sandbox, and exit. There is no idle state. Done means gone.
+**Self-cleaning:** When you run `gt done`, you complete the configured delivery
+path, nuke your sandbox, and exit. There is no idle state. Done means gone.
 
 **Important:** This formula defines the workflow template. Steps are shown inline
 when you run `gt prime` — there are no separate step beads to close. Work through
@@ -26,7 +26,7 @@ in ~5 seconds instead of re-running gates. If pre-verification is skipped or
 stale, the refinery falls through to normal gate execution.
 
 **You do NOT:**
-- Push directly to main (Refinery merges from MQ)
+- Push directly to main
 - Close your own issue (Refinery closes after merge)
 - Wait for merge (you're gone after `gt done`)
 - Fix pre-existing failures on main (Refinery owns main health)
@@ -52,7 +52,7 @@ stale, the refinery falls through to normal gate execution.
 | Context filling | Use gt handoff to cycle to fresh session |
 | Unsure what to do | Mail Witness, don't guess |"""
 formula = "mol-polecat-work"
-version = 10
+version = 11
 
 [[steps]]
 id = "load-context"
@@ -483,14 +483,13 @@ id = "submit-and-exit"
 title = "Submit work and self-clean"
 needs = ["pre-verify"]
 description = """
-Submit your work and clean up. You cease to exist after this step.
+Submit your work and clean up. Your behavior depends on your base branch.
 
 **Self-Cleaning Model:**
 Once you run `gt done`, you're gone. The command:
-1. Pushes your branch to origin
-2. Creates an MR bead in the merge queue
-3. Nukes your sandbox (worktree removal)
-4. Exits your session immediately
+1. Finalizes your delivery path
+2. Nukes your sandbox (worktree removal)
+3. Exits your session immediately
 
 **Pre-flight: Verify you have actual work to submit (HARD GATE):**
 ```bash
@@ -498,6 +497,36 @@ git log origin/{{base_branch}}..HEAD --oneline
 ```
 This MUST show at least 1 commit. If it shows nothing, do NOT run `gt done`.
 `gt done` will reject zero-commit branches for polecats.
+
+## Mode A: PR against main (base_branch = main or master)
+
+If your target branch is `main` or `master`, the deliverable is a GitHub PR.
+Do not land work through the merge queue for those protected branches.
+
+**1. Push your branch:**
+```bash
+git push origin HEAD -u
+```
+
+**2. Ensure a PR exists:**
+```bash
+gh pr view --json number,url 2>/dev/null || \
+gh pr create --fill --base {{base_branch}}
+```
+
+**3. Exit without merge-queue submission:**
+```bash
+gt done --no-merge
+```
+
+**What happens next (not your concern):**
+- Your branch stays pushed for review
+- A human teammate reviews and merges the PR
+- You are done. The PR is the deliverable
+
+## Mode B: Merge queue into a non-main branch (base_branch != main/master)
+
+For feature branches and swarm branches, the merge queue remains the delivery path.
 
 **Run gt done:**
 ```bash
@@ -511,17 +540,6 @@ gt done --target {{base_branch}}
 gt done --status DEFERRED
 ```
 
-You should see output like:
-```
-✓ Work submitted to merge queue
-  MR ID: gt-xxxxx
-  Source: polecat/<name>
-  Target: {{base_branch}}
-  Issue: {{issue}}
-✓ Sandbox nuked
-✓ Session exiting
-```
-
 **What happens next (not your concern):**
 - Refinery batches MRs and runs gates on the merged stack
 - If green: all MRs in the batch merge to {{base_branch}} at once
@@ -529,9 +547,15 @@ You should see output like:
 - Refinery fixes failures itself (inline or via helper polecats)
 - Refinery closes your issue after successful merge
 
+## How to decide which mode
+
+Check your `base_branch` variable:
+- If `{{base_branch}}` is `main` or `master` → Mode A (PR-first, `gt done --no-merge`)
+- Otherwise → Mode B (merge queue, `gt done --target {{base_branch}}`)
+
 You are NOT involved in any of that. You're gone. Done means gone.
 
-**Exit criteria:** Work submitted, sandbox nuked, session exited."""
+**Exit criteria:** PR created or work submitted, sandbox nuked, session exited."""
 
 [vars]
 [vars.issue]

@@ -1,12 +1,12 @@
 ---
-description: Signal work complete and submit to merge queue
-allowed-tools: Bash(gt done:*), Bash(git status:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(bd close:*)
+description: Signal work complete using the active delivery workflow
+allowed-tools: Bash(gt done:*), Bash(git status:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(bd close:*), Bash(gh pr view:*), Bash(gh pr create:*)
 argument-hint: [--status COMPLETED|ESCALATED|DEFERRED] [--pre-verified]
 ---
 
-# Done — Submit Work to Merge Queue
+# Done — Complete Delivery Workflow
 
-Signal that your work is complete and ready for the merge queue.
+Signal that your work is complete and ready for delivery.
 
 Arguments: $ARGUMENTS
 
@@ -27,15 +27,23 @@ git commit -m "<type>: <description>"
 
 ## Execute
 
-Run `gt done` with any provided arguments:
+For PR-first repos, make sure the branch is pushed and a PR exists before `gt done --no-merge`:
+
+```bash
+git push origin HEAD -u
+gh pr view --json number,url 2>/dev/null || gh pr create --fill
+```
+
+Then run `gt done` with any provided arguments:
 
 ```bash
 gt done $ARGUMENTS
 ```
 
 **Common usage:**
-- `gt done` — Submit completed work (default: --status COMPLETED)
-- `gt done --pre-verified` — Submit with pre-verification (you ran gates after rebase)
+- `gt done` — Submit completed work using the default workflow
+- `gt done --pre-verified` — Submit with pre-verification to the merge queue
+- `gt done --no-merge` — Finish a PR-first workflow without merge-queue submission
 - `gt done --status ESCALATED` — Signal blocker, skip MR
 - `gt done --status DEFERRED` — Pause work, skip MR
 
@@ -45,5 +53,6 @@ bd close <issue-id> --reason="no-changes: <brief explanation>"
 gt done
 ```
 
-This command pushes your branch, submits an MR to the merge queue, and transitions
-you to IDLE. The Refinery handles the actual merge. You are done after this.
+This command completes the active delivery workflow. In merge-queue mode it
+submits an MR to Refinery. In PR-first mode it records completion after the
+PR is opened. You are done after this.
