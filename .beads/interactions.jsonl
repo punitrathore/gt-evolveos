@@ -273,3 +273,10 @@
 {"id":"int-629c19eb","kind":"field_change","created_at":"2026-04-15T05:17:58.994449Z","actor":"daemon","issue_id":"hq-wisp-phr7d","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-77d207e9","kind":"field_change","created_at":"2026-04-15T05:17:59.365702Z","actor":"daemon","issue_id":"hq-wisp-u5ujc","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-db1cb896","kind":"field_change","created_at":"2026-04-15T05:22:58.25029Z","actor":"daemon","issue_id":"hq-wisp-narvj","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-4e9a70be","kind":"field_change","created_at":"2026-04-15T05:22:58.84405Z","actor":"daemon","issue_id":"hq-wisp-mlgi1","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-1fd43f41","kind":"field_change","created_at":"2026-04-15T05:28:05.996547Z","actor":"daemon","issue_id":"hq-wisp-poxga","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-2c9ecb65","kind":"field_change","created_at":"2026-04-15T05:32:58.612369Z","actor":"daemon","issue_id":"hq-wisp-3k3xh","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-3c5b69fb","kind":"field_change","created_at":"2026-04-15T05:32:59.418053Z","actor":"daemon","issue_id":"hq-wisp-dlyil","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
+{"id":"int-246cacce","kind":"field_change","created_at":"2026-04-15T05:32:59.41815Z","actor":"daemon","issue_id":"hq-wisp-dlyil","extra":{"field":"assignee","new_value":"deacon/dogs/delta","old_value":""}}
+{"id":"int-65aadca5","kind":"field_change","created_at":"2026-04-15T05:33:16.578812Z","actor":"daemon","issue_id":"hq-wisp-hpocf","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-d74e49d4","kind":"field_change","created_at":"2026-04-15T05:33:16.931434Z","actor":"daemon","issue_id":"hq-wisp-c5nir","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
