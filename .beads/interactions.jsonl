@@ -388,3 +388,15 @@
 {"id":"int-0e6c85bc","kind":"field_change","created_at":"2026-04-15T17:58:25.153275Z","actor":"ManaSutra/refinery","issue_id":"hq-wisp-g1fv","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
 {"id":"int-cdafd74a","kind":"field_change","created_at":"2026-04-15T17:58:25.153515Z","actor":"ManaSutra/refinery","issue_id":"hq-wisp-g1fv","extra":{"field":"assignee","new_value":"ManaSutra/refinery","old_value":""}}
 {"id":"int-c663d067","kind":"field_change","created_at":"2026-04-15T18:00:43.030415Z","actor":"daemon","issue_id":"hq-wisp-9u36","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-7f7fc719","kind":"field_change","created_at":"2026-04-15T18:00:43.869298Z","actor":"daemon","issue_id":"hq-wisp-4x0d","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-4666a322","kind":"field_change","created_at":"2026-04-15T18:05:43.086219Z","actor":"daemon","issue_id":"hq-wisp-pfd3","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-c0245166","kind":"field_change","created_at":"2026-04-15T18:10:43.515619Z","actor":"daemon","issue_id":"hq-wisp-k1w2","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-f99edc12","kind":"field_change","created_at":"2026-04-15T18:10:43.820457Z","actor":"mayor","issue_id":"hq-6g8","extra":{"field":"status","new_value":"open","old_value":"hooked"}}
+{"id":"int-28710d73","kind":"field_change","created_at":"2026-04-15T18:10:43.820586Z","actor":"mayor","issue_id":"hq-6g8","extra":{"field":"assignee","new_value":"","old_value":"ManaSutra/polecats/obsidian"}}
+{"id":"int-489bc061","kind":"field_change","created_at":"2026-04-15T18:10:44.487766Z","actor":"daemon","issue_id":"hq-wisp-quxc","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
+{"id":"int-23de7792","kind":"field_change","created_at":"2026-04-15T18:10:44.487932Z","actor":"daemon","issue_id":"hq-wisp-quxc","extra":{"field":"assignee","new_value":"deacon/dogs/alpha","old_value":""}}
+{"id":"int-df60e8f9","kind":"field_change","created_at":"2026-04-15T18:10:44.98531Z","actor":"mayor","issue_id":"hq-wisp-plis","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"burned: force re-sling"}}
+{"id":"int-947b4346","kind":"field_change","created_at":"2026-04-15T18:10:45.760479Z","actor":"mayor","issue_id":"hq-6g8","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
+{"id":"int-90795eae","kind":"field_change","created_at":"2026-04-15T18:10:45.761533Z","actor":"mayor","issue_id":"hq-6g8","extra":{"field":"assignee","new_value":"ManaSutra/polecats/furiosa","old_value":""}}
+{"id":"int-c779f713","kind":"field_change","created_at":"2026-04-15T18:11:02.079428Z","actor":"daemon","issue_id":"hq-wisp-nkbx","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-3c3b8d96","kind":"field_change","created_at":"2026-04-15T18:11:02.43834Z","actor":"daemon","issue_id":"hq-wisp-zk87","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
