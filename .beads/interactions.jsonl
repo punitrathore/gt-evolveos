@@ -233,3 +233,6 @@
 {"id":"int-1cebe5b0","kind":"field_change","created_at":"2026-04-15T03:57:38.358921Z","actor":"daemon","issue_id":"hq-wisp-oxmw1","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
 {"id":"int-c95bf5cd","kind":"field_change","created_at":"2026-04-15T03:57:38.359019Z","actor":"daemon","issue_id":"hq-wisp-oxmw1","extra":{"field":"assignee","new_value":"deacon/dogs/bravo","old_value":""}}
 {"id":"int-01c25114","kind":"field_change","created_at":"2026-04-15T03:57:55.5304Z","actor":"daemon","issue_id":"hq-wisp-yt4pe","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-dcfc0121","kind":"field_change","created_at":"2026-04-15T03:57:56.080426Z","actor":"daemon","issue_id":"hq-wisp-u89me","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-bdf159d4","kind":"field_change","created_at":"2026-04-15T04:02:36.466164Z","actor":"daemon","issue_id":"hq-wisp-a5wyh","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-c5f2a34a","kind":"field_change","created_at":"2026-04-15T04:07:36.471782Z","actor":"daemon","issue_id":"hq-wisp-640o8","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
