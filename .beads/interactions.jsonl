@@ -225,3 +225,11 @@
 {"id":"int-44550cd3","kind":"field_change","created_at":"2026-04-15T03:42:37.258819Z","actor":"daemon","issue_id":"hq-wisp-2m4jp","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-c144c6bb","kind":"field_change","created_at":"2026-04-15T03:42:37.657487Z","actor":"daemon","issue_id":"hq-wisp-6r0da","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
 {"id":"int-17b3d850","kind":"field_change","created_at":"2026-04-15T03:47:36.465637Z","actor":"daemon","issue_id":"hq-wisp-g3rpm","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-1a958bfb","kind":"field_change","created_at":"2026-04-15T03:47:37.041969Z","actor":"daemon","issue_id":"hq-wisp-4a2mz","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-65439b82","kind":"field_change","created_at":"2026-04-15T03:52:36.492654Z","actor":"daemon","issue_id":"hq-wisp-e8ekq","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-7eac86e4","kind":"field_change","created_at":"2026-04-15T03:57:36.838926Z","actor":"daemon","issue_id":"hq-wisp-djuda","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-a2d230a2","kind":"field_change","created_at":"2026-04-15T03:57:37.205524Z","actor":"daemon","issue_id":"hq-wisp-0huaf","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-d7480e08","kind":"field_change","created_at":"2026-04-15T03:57:37.566375Z","actor":"daemon","issue_id":"hq-wisp-e5q1m","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
+{"id":"int-1cebe5b0","kind":"field_change","created_at":"2026-04-15T03:57:38.358921Z","actor":"daemon","issue_id":"hq-wisp-oxmw1","extra":{"field":"status","new_value":"hooked","old_value":"open"}}
+{"id":"int-c95bf5cd","kind":"field_change","created_at":"2026-04-15T03:57:38.359019Z","actor":"daemon","issue_id":"hq-wisp-oxmw1","extra":{"field":"assignee","new_value":"deacon/dogs/bravo","old_value":""}}
+{"id":"int-01c25114","kind":"field_change","created_at":"2026-04-15T03:57:55.5304Z","actor":"daemon","issue_id":"hq-wisp-yt4pe","extra":{"field":"status","new_value":"closed","old_value":"open","reason":"Closed"}}
