@@ -1,5 +1,10 @@
 {
   "beads": {
+    "ms-87c": {
+      "bead_id": "ms-87c",
+      "count": 2,
+      "last_respawn": "2026-04-16T17:28:11.642719Z"
+    },
     "ms-ahi": {
       "bead_id": "ms-ahi",
       "count": 1,
@@ -16,5 +21,5 @@
       "last_respawn": "2026-04-16T16:12:18.68238Z"
     }
   },
-  "last_updated": "2026-04-16T16:12:18.682386Z"
+  "last_updated": "2026-04-16T17:28:11.642721Z"
 }
