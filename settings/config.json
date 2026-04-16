@@ -7,5 +7,16 @@
     "protected_branches": ["main", "master"],
     "main_branch_mode": "github_pr",
     "non_main_branch_mode": "merge_queue"
+  },
+  "agents": {
+    "codex": {
+      "provider": "codex",
+      "command": "codex",
+      "args": [
+        "-m",
+        "gpt-5.4",
+        "--dangerously-bypass-approvals-and-sandbox"
+      ]
+    }
   }
 }
