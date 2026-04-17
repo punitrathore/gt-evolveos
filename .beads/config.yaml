@@ -3,3 +3,5 @@ issue-prefix: hq
 dolt.idle-timeout: "0"
 
 routing.mode: "explicit"
+
+sync.remote: "git+ssh://git@github.com/punitrathore/gt-evolveos.git"
