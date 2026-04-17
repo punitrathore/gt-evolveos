@@ -10,11 +10,14 @@ crash after any step and resume from the last completed step.
 You are a self-cleaning worker. You:
 1. Receive work via your hook (formula checklist + issue)
 2. Work through formula steps in order (shown inline at prime time)
-3. Complete and self-clean via `gt done` (submit + nuke yourself)
-4. You are GONE - Refinery merges from MQ, or a human merges your PR
+3. Complete and self-clean via `gt done`
+4. You are GONE - either the GitHub PR or the merge queue takes it from there
 
-**Self-cleaning:** When you run `gt done`, you complete the configured delivery
-path, nuke your sandbox, and exit. There is no idle state. Done means gone.
+**Self-cleaning:** When you run `gt done`, you finish the correct delivery path
+for the target branch, clean up, and exit. For protected branches such as
+`main` and `master`, the deliverable is a GitHub PR. For non-main target
+branches, the deliverable is a merge-queue submission. There is no idle state.
+Done means gone.
 
 **Important:** This formula defines the workflow template. Steps are shown inline
 when you run `gt prime` — there are no separate step beads to close. Work through
@@ -52,7 +55,7 @@ stale, the refinery falls through to normal gate execution.
 | Context filling | Use gt handoff to cycle to fresh session |
 | Unsure what to do | Mail Witness, don't guess |"""
 formula = "mol-polecat-work"
-version = 11
+version = 10
 
 [[steps]]
 id = "load-context"
@@ -483,13 +486,14 @@ id = "submit-and-exit"
 title = "Submit work and self-clean"
 needs = ["pre-verify"]
 description = """
-Submit your work and clean up. Your behavior depends on your base branch.
+Submit your work and clean up. Your behavior depends on your target branch.
 
 **Self-Cleaning Model:**
 Once you run `gt done`, you're gone. The command:
-1. Finalizes your delivery path
-2. Nukes your sandbox (worktree removal)
-3. Exits your session immediately
+1. Pushes your branch to origin
+2. Either opens/updates a GitHub PR or submits to the merge queue
+3. Cleans up the sandbox/worktree
+4. Exits your session immediately
 
 **Pre-flight: Verify you have actual work to submit (HARD GATE):**
 ```bash
@@ -498,64 +502,53 @@ git log origin/{{base_branch}}..HEAD --oneline
 This MUST show at least 1 commit. If it shows nothing, do NOT run `gt done`.
 `gt done` will reject zero-commit branches for polecats.
 
-## Mode A: PR against main (base_branch = main or master)
+## Mode A: PR-first delivery (`{{base_branch}}` is `main` or `master`)
 
-If your target branch is `main` or `master`, the deliverable is a GitHub PR.
-Do not land work through the merge queue for those protected branches.
+For protected branches, the PR is the deliverable.
 
-**1. Push your branch:**
+If PR/MR tracking needs manual recovery, use the current Beads CLI form:
 ```bash
-git push origin HEAD -u
+bd create --repo <owner/name> ...
 ```
+Do not use `bd create --rig ...` here. `--rig` is obsolete and fails on current `bd`.
 
-**2. Ensure a PR exists:**
 ```bash
-gh pr view --json number,url 2>/dev/null || \
-gh pr create --fill --base {{base_branch}}
-```
-
-**3. Exit without merge-queue submission:**
-```bash
+git push origin HEAD
+gh pr create --base {{base_branch}} --fill || gh pr view --web
 gt done --no-merge
 ```
 
-**What happens next (not your concern):**
-- Your branch stays pushed for review
-- A human teammate reviews and merges the PR
-- You are done. The PR is the deliverable
+If `gh pr create` reports an existing PR, verify that it targets
+`{{base_branch}}` and continue with `gt done --no-merge`.
 
-## Mode B: Merge queue into a non-main branch (base_branch != main/master)
+## Mode B: Merge-queue delivery (`{{base_branch}}` is not `main` or `master`)
 
-For feature branches and swarm branches, the merge queue remains the delivery path.
-
-**Run gt done:**
 ```bash
 # For code tasks with pre-verification (recommended — enables fast-path merge):
 gt done --pre-verified --target {{base_branch}}
 
 # For code tasks without pre-verification (gates skipped or failed):
 gt done --target {{base_branch}}
+```
 
-# For report-only tasks (no commits — audits, reviews, research):
+## Report-only tasks
+
+```bash
 gt done --status DEFERRED
 ```
 
+**Hard rule:**
+- If the target branch is `main` or `master`, do NOT submit directly to the merge queue
+- For protected branches, open or update a GitHub PR first, then run `gt done --no-merge`
+
 **What happens next (not your concern):**
-- Refinery batches MRs and runs gates on the merged stack
-- If green: all MRs in the batch merge to {{base_branch}} at once
-- If red: Refinery bisects to isolate the culprit, merges the good ones
-- Refinery fixes failures itself (inline or via helper polecats)
-- Refinery closes your issue after successful merge
-
-## How to decide which mode
-
-Check your `base_branch` variable:
-- If `{{base_branch}}` is `main` or `master` → Mode A (PR-first, `gt done --no-merge`)
-- Otherwise → Mode B (merge queue, `gt done --target {{base_branch}}`)
+- For `main` / `master`: a human reviews and merges the PR
+- For other target branches: Refinery batches MRs and merges them to {{base_branch}}
+- Cleanup still completes through Witness / Refinery after your completion signal
 
 You are NOT involved in any of that. You're gone. Done means gone.
 
-**Exit criteria:** PR created or work submitted, sandbox nuked, session exited."""
+**Exit criteria:** Work submitted, sandbox nuked, session exited."""
 
 [vars]
 [vars.issue]

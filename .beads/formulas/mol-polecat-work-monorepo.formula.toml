@@ -502,6 +502,12 @@ This MUST show at least 1 commit. If it shows nothing, do NOT run `gt done`.
 Your PR is the deliverable. A human teammate will review and merge it.
 CI is green, AI reviews are addressed — the PR is ready for human review.
 
+If PR/MR tracking needs manual recovery, use the current Beads CLI form:
+```bash
+bd create --repo <owner/name> ...
+```
+Do not use `bd create --rig ...` here. `--rig` is obsolete and fails on current `bd`.
+
 ```bash
 # Ensure latest changes are pushed
 git push origin HEAD
