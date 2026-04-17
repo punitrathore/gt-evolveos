@@ -1,5 +1,11 @@
 {
   "type": "town-settings",
   "version": 1,
-  "default_agent": "codex"
+  "default_agent": "codex",
+  "agent_delivery": {
+    "workflow": "pr-first",
+    "protected_branches": ["main", "master"],
+    "main_branch_mode": "github_pr",
+    "non_main_branch_mode": "merge_queue"
+  }
 }
